@@ -108,9 +108,9 @@ if(empty($_SESSION["userId"])) {
 
 <option value="null">Select Gate</option>
 <br></br>
-<option  value="stripe006.php"disabled>BRAINTREE AUTH</option>
-<option  value="braintree01.php">BRAINTREE 2 AUTH</option>
-<option  value="stripe005.php">Stripe-CCN CHARGE (NON 3D ONLY)</option>
+<option  value="/app/gate/stripe006.php"disabled>BRAINTREE AUTH</option>
+<option  value="/app/gate/braintree01.php">BRAINTREE 2 AUTH</option>
+<option  value="/app/gate/stripe01.php">Stripe-CCN CHARGE (NON 3D ONLY)</option>
 <option  value="stripe006.php"disabled>Stripe-CCN CHARGE (NON 3D ONLY)</option>
 <option  value="payflow-ccn.php"disabled>PAYFLOW(CCN)</option>
 <option  value="ANZ.php"disabled>ANZ</option>
