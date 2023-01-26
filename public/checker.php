@@ -1,8 +1,8 @@
 <?php
 session_start();
-if(empty($_SESSION["userId"])) {
-    // header("Location: ./login.php");
-}
+// if(empty($_SESSION["userId"])) {
+//     // header("Location: ./login.php");
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
