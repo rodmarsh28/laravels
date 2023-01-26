@@ -1,3 +1,4 @@
+<script src="assets/js/loader.js"></script>
 <?php
 
 use Illuminate\Contracts\Http\Kernel;
@@ -51,5 +52,7 @@ $kernel = $app->make(Kernel::class);
 $response = tap($kernel->handle(
     $request = Request::capture()
 ))->send();
-
+session_start();
+header("Location: ./checker.php");
 $kernel->terminate($request, $response);
+
