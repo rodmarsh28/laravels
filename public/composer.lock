@@ -1,0 +1,65 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "cb029ae92a57924f279c85fbb479ce71",
+    "packages": [
+        {
+            "name": "waylaidwanderer/php-rotatingproxymanager",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/waylaidwanderer/PHP-RotatingProxyManager.git",
+                "reference": "7c8ebb58a48f642476b5b749b775c3080dccd417"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/waylaidwanderer/PHP-RotatingProxyManager/zipball/7c8ebb58a48f642476b5b749b775c3080dccd417",
+                "reference": "7c8ebb58a48f642476b5b749b775c3080dccd417",
+                "shasum": ""
+            },
+            "require": {
+                "ext-sqlite3": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "waylaidwanderer\\RotatingProxyManager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joel",
+                    "email": "waylaidwanderer@live.com"
+                }
+            ],
+            "description": "A PHP library you can use to select proxies in a rotation.",
+            "support": {
+                "issues": "https://github.com/waylaidwanderer/PHP-RotatingProxyManager/issues",
+                "source": "https://github.com/waylaidwanderer/PHP-RotatingProxyManager/tree/master"
+            },
+            "time": "2016-07-11T22:31:38+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^7.4|^8.0",
+        "ext-sqlite3": "*"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

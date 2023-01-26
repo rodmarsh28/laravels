@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/beta_cc.iml" filepath="$PROJECT_DIR$/.idea/beta_cc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../cc-checker/.idea/cc-checker.iml" filepath="$PROJECT_DIR$/../../cc-checker/.idea/cc-checker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../doc-bot/.idea/doc-bot.iml" filepath="$PROJECT_DIR$/../../doc-bot/.idea/doc-bot.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,19 @@
+{
+    "name": "doc/beta_cc",
+    "autoload": {
+        "psr-4": {
+            "Doc\\BetaCc\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "rad091996",
+            "email": "101588926+rad091996@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "waylaidwanderer/php-rotatingproxymanager": "1.0.0",
+        "ext-sqlite3": "*"
+    }
+}
