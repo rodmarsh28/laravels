@@ -1,9 +1,17 @@
 <?php
 include("countries.php");
+include('proxy.php');
 // include("flag.php");
 // include("proxy.php");
 // global $cur_proxy;
 
+function proxy() 
+{ 
+$file = file("proxy.txt");
+  $a = rand(0, sizeof($file) - 1); 
+  $siteSelected  = $file[$a]; 
+  return $siteSelected; 
+}
 function GetStr($target, $start, $end){
     if ($target == ""){
         return false;
@@ -68,47 +76,77 @@ function cURL($url, $headers, $postfields, $customrequest, $_fls, $cookie) {
 
 $str = substr(randomString(), 0, 7);
 
-// function get_proxies(){
-//     //   $data = file_get_contents("http://localhost:5555/random");
-//     //   return $data ;
-//     $clientKey= "60f7bdf787msh61ddbd43812c12cp1059a4jsnd4564938be2c";
-//     $createTask =  cURLc(
-//         "http://173.82.245.245:12345/api/proxy/",
-//         $headers = [
-//             "content-type: application/json"
-//         ],
-//         '',
-//         "GET");
-//         $data = json_decode($createTask, true);
-//          $proxy = $data["proxy"]["host"].':'.$data["proxy"]["port"];
-//         return $proxy;
-// }
-// $proxie = get_proxies();
+function get_proxies(){
+    //   $data = file_get_contents("http://localhost:5555/random");
+    //   return $data ;
+    $clientKey= "60f7bdf787msh61ddbd43812c12cp1059a4jsnd4564938be2c";
+    $createTask =  cURLc(
+        "http://173.82.245.245:12345/api/proxy/",
+        $headers = [
+            "content-type: application/json"
+        ],
+        '',
+        "GET");
+        $data = json_decode($createTask, true);
+         $proxy = $data["proxy"]["host"].':'.$data["proxy"]["port"];
+        return $proxy;
+}
+$proxie = getProxy("squid");
+function cURL_ProxyOn($url, $headers, $postfields, $customrequest, $_fls, $cookie) {
+    $session = $cookie;
+    $ch = curl_init();
+    curl_setopt_array($ch, array(
+        CURLOPT_URL => $url,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_FOLLOWLOCATION => $_fls,
+        // CURLOPT_SSL_VERIFYHOST => 0,
+        // CURLOPT_SSL_VERIFYPEER => 0,    
+        // CURLOPT_PROXY => 'http://proxy.proxy-cheap.com:31112',
+        // CURLOPT_PROXYUSERPWD => 'x7awgs9b:gh7yLYPj8liXxwpC',
+        //CURLOPT_PROXY => "http://scraperapi:f73965b26e9d8457634c8b1597c0e6da@proxy-server.scraperapi.com:8001",
+        CURLOPT_PROXY => "http://173.82.206.25:5566",
+        CURLOPT_COOKIE => "itrack=$cookie",
+        CURLOPT_HEADER => false,
+        CURLOPT_CUSTOMREQUEST => $customrequest,
+        CURLOPT_COOKIEFILE => getcwd()."/cookies/".$cookie.".txt",
+        CURLOPT_COOKIEJAR => getcwd()."/cookies/".$cookie.".txt",
+        CURLOPT_HTTPHEADER => $headers,
+        CURLOPT_POSTFIELDS => $postfields
+    ));
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    return $response;
+}
+function cURL_ProxyJSON($url, $headers, $postfields, $customrequest, $_fls, $cookie) {
+    $session = $cookie;
+    $ch = curl_init();
+    curl_setopt_array($ch, array(
+        CURLOPT_URL => $url,
+        CURLOPT_RETURNTRANSFER => True,
+        CURLOPT_FOLLOWLOCATION => $_fls,
+        CURLOPT_SSL_VERIFYHOST => 0,
+        CURLOPT_SSL_VERIFYPEER => 0,    
+        // CURLOPT_PROXY => 'http://proxy.proxy-cheap.com:31112',
+        // CURLOPT_PROXYUSERPWD => 'x7awgs9b:gh7yLYPj8liXxwpC',
+        //CURLOPT_PROXY => "http://scraperapi.render=true.keep_headers=true:f73965b26e9d8457634c8b1597c0e6da@proxy-server.scraperapi.com:8001",
+        CURLOPT_PROXY => "http://173.82.206.25:5566",
+        CURLOPT_COOKIE => "itrack=$cookie",
+        CURLOPT_HEADER => False,
+        CURLOPT_CUSTOMREQUEST => $customrequest,
+        CURLOPT_COOKIEFILE => getcwd()."/cookies/".$cookie.".txt",
+        CURLOPT_COOKIEJAR => getcwd()."/cookies/".$cookie.".txt",
+        CURLOPT_HTTPHEADER => $headers,
+        CURLOPT_POSTFIELDS => $postfields
+    ));
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    return var_dump($response);
+}
 
 function randomInfo(){
-    function cURL_ProxyOn($url, $headers, $postfields, $customrequest, $_fls, $cookie) {
-        $session = $cookie;
-        $ch = curl_init();
-        curl_setopt_array($ch, array(
-            CURLOPT_URL => $url,
-            CURLOPT_RETURNTRANSFER => 1,
-            CURLOPT_FOLLOWLOCATION => $_fls,
-            CURLOPT_COOKIE => "itrack=$cookie",
-            CURLOPT_PROXY => 'http://proxy.proxy-cheap.com:31112',
-            CURLOPT_PROXYUSERPWD => 'x7awgs9b:gh7yLYPj8liXxwpC',
-            CURLOPT_HEADER => 1,
-            CURLOPT_CUSTOMREQUEST => $customrequest,
-            CURLOPT_COOKIEFILE => getcwd()."/cookies/".$cookie.".txt",
-            CURLOPT_COOKIEJAR => getcwd()."/cookies/".$cookie.".txt",
-            CURLOPT_HTTPHEADER => $headers,
-            CURLOPT_POSTFIELDS => $postfields
-        ));
-        $response = curl_exec($ch);
-        curl_close($ch);
-    
-        return $response;
-    }
-    
+
     $curl = curl_init();
 
     curl_setopt_array($curl, array(

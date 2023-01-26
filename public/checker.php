@@ -108,9 +108,10 @@ if(empty($_SESSION["userId"])) {
 
 <option value="null">Select Gate</option>
 <br></br>
-<option  value="/app/gate/stripe006.php"disabled>BRAINTREE AUTH</option>
-<option  value="/app/gate/braintree01.php">BRAINTREE 2 AUTH</option>
-<option  value="/app/gate/stripe01.php">Stripe-CCN CHARGE (NON 3D ONLY)</option>
+<option  value="stripe006.php"disabled>BRAINTREE AUTH</option>
+<option  value="braintree01.php">BRAINTREE 2 AUTH</option>
+<option  value="stripe01.php">Stripe-CCN CHARGE (NON 3D ONLY)</option>
+<option  value="stripe02.php">Stripe-CCN CHARGE (NON 3D ONLY)</option>
 <option  value="stripe006.php"disabled>Stripe-CCN CHARGE (NON 3D ONLY)</option>
 <option  value="payflow-ccn.php"disabled>PAYFLOW(CCN)</option>
 <option  value="ANZ.php"disabled>ANZ</option>
@@ -448,7 +449,8 @@ if(empty($_SESSION["userId"])) {
                                             <option style="background: #000000" value="2028">2028</option>
                                             <option style="background: #000000" value="2029">2029</option>
                                             <option style="background: #000000" value="2030">2030</option>
-                                            <option style="background: #000000" value="2031">2020</option>
+                                            <option style="background: #000000" value="2031">2031</option>
+                                            <option style="background: #000000" value="2032">2032</option>
                                         </select>
                                     </div>
                                 </div>

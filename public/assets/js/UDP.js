@@ -97,7 +97,7 @@ function checklista() {
         setTimeout(
             function(){
                 $.ajax({
-                    url: apis + '?cc_info=' + value + '&sk=' + sk_live + '&referrer=Tikol4Life',
+                    url: apis + '?cc_info=' + value + '&sk=' + sk_live + '&referrer=',
                     type: 'GET',
                     async: true,
                     success: function(results) {
@@ -145,7 +145,7 @@ function checkSK(){
     setTimeout(
         function(){
             $.ajax({
-            url: 'skcheck.php?sk=' + sk_live + '&referrer=Tikol4Life',
+            url: 'skcheck.php?sk=' + sk_live + '&referrer=',
             type: 'GET',
             async: true,
             beforeSend: function () {

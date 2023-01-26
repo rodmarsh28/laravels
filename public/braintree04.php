@@ -173,7 +173,7 @@ $response = GetStr($confirm_method, 'Reason:', '\t');
     $cookie, $proxy
 );              
 $response = GetStr($confirm_method, 'class="woocommerce-error" role="alert">', "</ul>");
-if(strpos($confirm_method, 'Payment method successfully added.')|| strpos($response, 'Duplicate card exists in the vault')){
+if(strpos($confirm_method, 'Payment method successfully added.')|| strpos($response, 'Duplicate card exists in the vault')|| strpos($response, 'Nice')){
     $response = "Matched";
 }elseif(strpos($response, "Invalid postal code")){
     $response = "Matched - AVS";
