@@ -1,7 +1,7 @@
 <script src="assets/js/loader.js"></script>
 <?php
 
-session_start();
+// session_start();
 header("Location: ./checker.php");
 	// if(!empty($_SESSION["userId"])) {
 	// 	// $_POST["userid"]=$_SESSION["userId"];
